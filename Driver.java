@@ -7,7 +7,15 @@
  */
 import java.util.ArrayList;
 import java.util.Scanner;
+/**
+ * La clase `Driver` es la clase principal que inicia la aplicación del torneo de volleyball.
+ */
 public class Driver{
+    /**
+     * Método principal para ejecutar la aplicación.
+     *
+     * @param args Los argumentos de la línea de comandos (no se utilizan en este programa).
+     */
     public static void main (String[] args){
         Scanner sc = new Scanner(System.in);
         boolean go = true;
@@ -82,6 +90,7 @@ public class Driver{
                         AuxiliarOp auxiliarOp = new AuxiliarOp(nombre, pais, errores, aces, totalServicios, ataques, bloqueosEfectivos, bloqueosFallidos);
                         archivo.AgregarJugador(auxiliarOp);
                     }
+                    break;
                 case 3:
                     archivo.Mostrar3MejoresLiberos();
                     break;
@@ -92,10 +101,16 @@ public class Driver{
                 case 5:
                     archivo.GuardarCSV("DatosVolley.csv");
                     break;
+
+                case 6:
+                    go = false;
+                    break;
             }
         }
-
     }
+    /**
+     * Muestra el menú de opciones disponibles.
+     */
     public static void PrintMenu(){
         System.out.println("\nBienvenidos Al Torneo de Volleyball");
         System.out.println("1. Mostrar a los jugadores Inscritos");
@@ -103,6 +118,7 @@ public class Driver{
         System.out.println("3. Mostrar a los 3 mejores Liberos");
         System.out.println("4. La cantidad de pasadores con más de un 80% de efectividad");
         System.out.println("5. Guardar los nuevos jugadores");
+        System.out.println("6. Salir");
         System.out.println("Que opcion desea realizar?\n");
     }
     

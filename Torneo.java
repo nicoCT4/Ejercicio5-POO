@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 public class Torneo {
     private BufferedReader lector;
     private String linea;
@@ -136,6 +135,11 @@ public class Torneo {
 
     public void GuardarCSV(String nombreArchivo) {
         try (BufferedWriter escritor = new BufferedWriter(new FileWriter(nombreArchivo))) {
+            // Escribe la línea de encabezados
+            escritor.write("Tipo;Nombre;Pais;Errores;Aces;Total de Servicios;Recibos;Pases;Fintas;Ataques;Bloqueos Fallidos;Bloqueos Efectivos");
+            escritor.newLine();
+
+            // Escribe los datos de los jugadores
             for (Jugador jugador : jugadores) {
                 String linea = jugador.toCSV();
                 escritor.write(linea);
@@ -148,3 +152,4 @@ public class Torneo {
         }
     }
 }
+
