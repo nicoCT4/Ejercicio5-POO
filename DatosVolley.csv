@@ -1,9 +1,9 @@
 Tipo;Nombre;Pais;Errores;Aces;Total de Servicios;Recibos;Pases;Fintas;Ataques;Bloqueos Fallidos;Bloqueos Efectivos
-Pasador;Esteban;Guatemala;5;2;100;20;50;30;;;
-Libero;Messi;Argentina;1;8;50;;100;80;;;
+Pasador;Esteban;Guatemala;5;2;100;;50;30;;;
+Libero;Messi;Argentina;1;8;50;40;100;80;;;
 AuxiliaresOp;Mora;Puerto Rico;2;4;55;;;;50;15;22
 AuxiliaresOp;Eladio;Puerto Rico;3;4;60;;;;60;10;25
-Libero;Drake;United States;4;3;30;;80;10;;;
-Libero;Giammatei;Guatemala;15;0;15;;25;1;;;
-Libero;Miguelito;Guatemala;10;0;99;;20;2;;;
-Pasador;CR7;Portugal;1;10;70;80;99;90;;;
+Libero;Drake;United States;4;3;30;30;80;10;;;
+Libero;Giammatei;Guatemala;15;0;15;1;25;1;;;
+Libero;Miguelito;Guatemala;10;0;99;2;20;2;;;
+Pasador;CR7;Portugal;1;10;70;;99;90;;;

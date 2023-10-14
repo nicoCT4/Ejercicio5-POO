@@ -5,6 +5,7 @@
  * Universidad del Valle de Guatemala
  * Ejericio 5 Polimorfismo via herencia
  */
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Driver{
     public static void main (String[] args){
@@ -81,7 +82,13 @@ public class Driver{
                         AuxiliarOp auxiliarOp = new AuxiliarOp(nombre, pais, errores, aces, totalServicios, ataques, bloqueosEfectivos, bloqueosFallidos);
                         archivo.AgregarJugador(auxiliarOp);
                     }
-
+                case 3:
+                    archivo.Mostrar3MejoresLiberos();
+                    break;
+                case 4:
+                    archivo.MostrarPasadores();
+                    break;
+                
                 case 5:
                     archivo.GuardarCSV("DatosVolley.csv");
                     break;
@@ -98,4 +105,5 @@ public class Driver{
         System.out.println("5. Guardar los nuevos jugadores");
         System.out.println("Que opcion desea realizar?\n");
     }
+    
 }

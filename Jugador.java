@@ -29,7 +29,7 @@ public abstract class Jugador {
         return totalServicios;
     }
     public String toString(){
-        return "\nNombre: " + nombre + "\nPais: " + pais + "\nErrores: " + errores + "\nAces: " + aces + "\nTotal de servicios: " + totalServicios;
+        return "\nNombre: " + nombre + "\nPais: " + pais + "\nErrores: " + errores + "\nAces: " + aces + "\nTotal de servicios: " + totalServicios + "\n Efectividad: "+CalcularEfectividad();
     }
 
     //Metodos abstractos

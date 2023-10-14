@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -17,22 +18,69 @@ public class Torneo {
     public void AgregarJugador(Jugador jugador){
         jugadores.add(jugador);
     }
-
-    public void MostrarJugadores(){
-        for (Jugador jugador : jugadores) {
-            System.out.println(jugador);
-        }
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
     }
 
-    public ArrayList<Jugador> getMejoreLiberos(int n){
-        ArrayList<Jugador> mejoresLiberos = new ArrayList<Jugador>();
+    public void MostrarPasadores() {
+        System.out.println("Pasadores con más del 80% de efectividad:");
+    
+        int cantidadPasadores = 0; // Variable para rastrear la cantidad de pasadores con más del 80% de efectividad
+    
         for (Jugador jugador : jugadores) {
-            if (jugador instanceof Libero) {
-                mejoresLiberos.add(jugador);
+            if (jugador instanceof Pasador) {
+                double efectividad = jugador.CalcularEfectividad();
+    
+                if (efectividad > 80.0) {
+                    cantidadPasadores++;
+                    System.out.println(jugador.getNombre() + " - " + efectividad + "% de efectividad");
+                }
             }
         }
-        return mejoresLiberos;
+    
+        System.out.println("Total de pasadores con más del 80% de efectividad: " + cantidadPasadores);
     }
+    
+    
+    
+
+    public void MostrarJugadores() {
+        for (Jugador jugador : jugadores) {
+            if (jugador instanceof Libero) {
+                System.out.println("\nLibero: " + jugador);
+            } else if (jugador instanceof Pasador) {
+                System.out.println("\nPasador: " + jugador);
+            } else if (jugador instanceof AuxiliarOp) {
+                System.out.println("\nAuxiliarOp: " + jugador);
+            }
+        }
+    }
+
+    public void Mostrar3MejoresLiberos() {
+    ArrayList<Jugador> liberos = new ArrayList<Jugador>();
+    
+    for (Jugador jugador : jugadores) {
+        if (jugador instanceof Libero) {
+            liberos.add(jugador);
+        }
+    }
+
+    if (liberos.size() < 3) {
+        System.out.println("No hay suficientes liberos para mostrar los 3 mejores.");
+    } else {
+        liberos.sort(Comparator.comparingDouble(Jugador::CalcularEfectividad).reversed());
+        
+        System.out.println("Los 3 mejores liberos son:");
+        for (int i = 0; i < 3; i++) {
+            Jugador libero = liberos.get(i);
+            double efectividad = libero.CalcularEfectividad();
+            System.out.println((i + 1) + ". " + libero.getNombre() + " - " + efectividad + "% de efectividad");
+        }
+    }
+}
+
+    
+    
 
     public void CargarCSV(String nombreArchivo) {
         try {
@@ -82,31 +130,7 @@ public class Torneo {
             partes = null;
         } catch (Exception e) {
             System.out.println("Error al leer el archivo");
-            System.out.println(e.getMessage());
-        }
-    }
-    
-    
-
-    public void ImprimirCSV (String nombreArchivo){
-    try{
-        lector = new BufferedReader(new FileReader(nombreArchivo));
-        while ((linea = lector.readLine()) != null){
-            partes = linea.split(";");
-            imprimirLinea();
-            System.out.println();
-        }
-        lector.close();
-        linea = null;
-        partes  = null;
-    }catch(Exception e){
-        System.out.println("Error al leer el archivo");
-    }
-}
-
-    public void imprimirLinea(){
-        for (int i = 0; i < partes.length; i++) {
-            System.out.println(partes[i]);
+            System.out.println(e);
         }
     }
 
@@ -118,8 +142,9 @@ public class Torneo {
                 escritor.newLine();
             }
             System.out.println("Datos guardados en " + nombreArchivo);
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("Error al guardar el archivo CSV");
+            System.out.println(e);
         }
     }
 }
