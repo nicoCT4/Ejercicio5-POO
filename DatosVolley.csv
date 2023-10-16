@@ -1,8 +1,8 @@
 Tipo;Nombre;Pais;Errores;Aces;Total de Servicios;Recibos;Pases;Fintas;Ataques;Bloqueos Fallidos;Bloqueos Efectivos
-Esteban;Guatemala;5;2;100;0;50
-Messi;Argentina;1;8;50;40
-Drake;United States;4;3;30;20
-Giammatei;Guatemala;15;0;15;1
-Miguelito;Guatemala;10;0;99;2
-CR7;Portugal;1;10;70;0;99
-Fer;Guatemala;2;4;7;6
+Pasador;Esteban;Guatemala;5;2;100;20;50
+Libero;Messi;Argentina;1;8;50;0
+Libero;Drake;United States;4;3;30;0
+Libero;Giammatei;Guatemala;15;0;15;0
+Libero;Miguelito;Guatemala;10;0;99;0
+Pasador;CR7;Portugal;1;10;70;80;99
+Libero;Fer;Guatemala;2;5;10;8

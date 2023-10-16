@@ -4,6 +4,7 @@ public class Libero extends Jugador {
     public Libero(String nombre, String pais, int errores, int aces, int totalServicios, int recibos){
         super(nombre, pais, errores, aces, totalServicios);
         this.recibos = recibos;
+        this.tipo = "Libero";
     }
 
     public int getRecibos(){
@@ -14,7 +15,8 @@ public class Libero extends Jugador {
         return ((recibos - getErrores()) * 100.0) / (recibos + getErrores()) + (getAces() * 100.0 / getTotalServicios());
     }
     @Override
-    public String toCSV(){
-        return getNombre() + ";" + getPais() + ";" + getErrores() + ";" + getAces() + ";" + getTotalServicios() + ";" + recibos;
+    public String toCSV() {
+        return tipo + ";" + getNombre() + ";" + getPais() + ";" + getErrores() + ";" + getAces() + ";" + getTotalServicios() + ";" + recibos;
     }
+    
 }

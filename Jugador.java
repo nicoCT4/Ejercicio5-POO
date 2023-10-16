@@ -4,6 +4,7 @@ public abstract class Jugador {
     protected int errores;
     protected int aces;
     protected int totalServicios;
+    protected String tipo;
 
     public Jugador(String nombre, String pais, int errores, int aces, int totalServicios){
         this.nombre = nombre;
@@ -11,11 +12,16 @@ public abstract class Jugador {
         this.errores = errores;
         this.aces = aces;
         this.totalServicios = totalServicios;
+        this.tipo = tipo;
     }
     //getters
     public String getNombre(){
         return nombre;
     }
+    public String getTipo(){
+        return tipo;
+    }
+    
     public String getPais(){
         return pais;
     }

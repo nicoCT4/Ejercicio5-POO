@@ -5,6 +5,7 @@ public class Pasador extends Jugador {
         super(nombre, pais, errores, aces, totalServicios);
         this.pases = pases;
         this.fintas = fintas;
+        this.tipo = "Pasador";
     }
     public int getPases(){
         return pases;
@@ -18,6 +19,6 @@ public class Pasador extends Jugador {
     }
     @Override
     public String toCSV(){
-        return getNombre() + ";" + getPais() + ";" + getErrores() + ";" + getAces() + ";" + getTotalServicios() + ";" + pases + ";" + fintas;
+        return tipo + ";" + getNombre() + ";" + getPais() + ";" + getErrores() + ";" + getAces() + ";" + getTotalServicios() + ";" + pases + ";" + fintas;
     }
 }

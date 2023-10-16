@@ -6,6 +6,7 @@ public class AuxiliarOp extends Jugador {
         this.ataques = ataques;
         this.bloqueosEfectivos = bloqueosEfectivos;
         this.bloqueosFallidos = bloqueosFallidos;
+        this.tipo = "AuxiliaresOp";
     }
 
     public int getAtaques(){
@@ -24,6 +25,6 @@ public class AuxiliarOp extends Jugador {
     }
     @Override
     public String toCSV(){
-        return getNombre() + ";" + getPais() + ";" + getErrores() + ";" + getAces() + ";" + getTotalServicios() + ";" + ataques + ";" + bloqueosEfectivos + ";" + bloqueosFallidos;
+        return tipo + ";" + getNombre() + ";" + getPais() + ";" + getErrores() + ";" + getAces() + ";" + getTotalServicios() + ";" + ataques + ";" + bloqueosEfectivos + ";" + bloqueosFallidos;
     }
 }
